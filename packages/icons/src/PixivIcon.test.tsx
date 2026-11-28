@@ -1,5 +1,6 @@
 // import { loaders } from './loaders'
-import { PixivIcon, calcActualSize } from '.'
+import { PixivIcon, PixivIconLoadError, calcActualSize } from '.'
+import { addRawFile } from './loaders/CustomRawFileLoader'
 import {
   vi,
   describe,
@@ -26,6 +27,184 @@ describe('PixivIcon', () => {
 
   it('can createElement()', () => {
     expect(icon.constructor.name).toBe('PixivIcon')
+  })
+})
+
+describe('PixivIcon lifecycle', () => {
+  let nextIcon = 0
+  const observers: TestIntersectionObserver[] = []
+  class TestIntersectionObserver implements IntersectionObserver {
+    readonly root = null
+    readonly rootMargin = '50px'
+    readonly scrollMargin = '0px'
+    readonly thresholds = [0]
+    observe = vi.fn()
+    unobserve = vi.fn()
+    disconnect = vi.fn()
+    takeRecords = vi.fn(() => [])
+
+    constructor(private callback: IntersectionObserverCallback) {
+      observers.push(this)
+    }
+
+    show() {
+      this.callback(
+        [{ isIntersecting: true } as IntersectionObserverEntry],
+        this,
+      )
+    }
+  }
+
+  let icon: PixivIcon
+  beforeEach(() => {
+    observers.length = 0
+    vi.stubGlobal('IntersectionObserver', TestIntersectionObserver)
+    icon = document.createElement('pixiv-icon') as PixivIcon
+    icon.setAttribute('name', '16/TestLifecycle')
+  })
+
+  afterEach(() => {
+    icon.disconnectedCallback()
+    vi.unstubAllGlobals()
+  })
+
+  it('settles visibility waits when disconnected before becoming visible', async () => {
+    const settled = vi.fn()
+    void icon.connectedCallback().then(settled)
+    icon.disconnectedCallback()
+    await Promise.resolve()
+    await Promise.resolve()
+
+    expect(observers[0].disconnect).toHaveBeenCalledOnce()
+    expect(settled).toHaveBeenCalledOnce()
+  })
+
+  it('keeps only one observer when connected again', () => {
+    void icon.connectedCallback()
+    void icon.connectedCallback()
+
+    expect(observers).toHaveLength(2)
+    expect(observers[0].disconnect).toHaveBeenCalledOnce()
+    expect(observers[1].disconnect).not.toHaveBeenCalled()
+  })
+
+  it('ignores queued visibility callbacks from a previous connection', async () => {
+    const settled = vi.fn()
+    void icon.connectedCallback().then(settled)
+    icon.disconnectedCallback()
+    void icon.connectedCallback()
+    observers[0].show()
+    await Promise.resolve()
+    await Promise.resolve()
+
+    expect(settled).toHaveBeenCalledOnce()
+    expect(observers[1].disconnect).not.toHaveBeenCalled()
+  })
+
+  function deferredIcon() {
+    const name = `16/DeferredLifecycle${nextIcon++}`
+    const deferred = Promise.withResolvers<string>()
+    addRawFile(name, () => deferred.promise)
+    return { name, ...deferred }
+  }
+
+  async function showIcon() {
+    const connection = icon.connectedCallback()
+    observers.at(-1)?.show()
+    await Promise.resolve()
+    return { connection }
+  }
+
+  it('keeps the latest icon when loads resolve out of order', async () => {
+    const first = deferredIcon()
+    const second = deferredIcon()
+    icon.setAttribute('name', first.name)
+    const { connection } = await showIcon()
+    icon.setAttribute('name', second.name)
+
+    second.resolve('<svg data-icon="second"></svg>')
+    await vi.waitFor(() => {
+      expect(icon.shadowRoot?.querySelector('svg')?.dataset.icon).toBe('second')
+    })
+    first.resolve('<svg data-icon="first"></svg>')
+    await connection
+    expect(icon.shadowRoot?.querySelector('svg')?.dataset.icon).toBe('second')
+  })
+
+  it('does not render a pending load after disconnecting', async () => {
+    const pending = deferredIcon()
+    icon.setAttribute('name', pending.name)
+    const { connection } = await showIcon()
+    icon.disconnectedCallback()
+    pending.resolve('<svg data-icon="detached"></svg>')
+    await connection
+
+    expect(icon.shadowRoot?.querySelector('[data-icon]')).toBeNull()
+  })
+
+  it('dispatches a load error and leaves a placeholder after a name change fails', async () => {
+    const first = deferredIcon()
+    icon.setAttribute('name', first.name)
+    const { connection } = await showIcon()
+    first.resolve('<svg data-icon="first"></svg>')
+    await connection
+    const errors: unknown[] = []
+    icon.addEventListener('error', (event) => {
+      if (event instanceof CustomEvent) errors.push(event.detail)
+    })
+
+    icon.setAttribute('name', '16/MissingLifecycleIcon')
+    await vi.waitFor(() => expect(errors).toHaveLength(1))
+    expect(errors[0]).toBeInstanceOf(PixivIconLoadError)
+    expect(icon.shadowRoot?.querySelector('svg')).not.toBeNull()
+    expect(icon.shadowRoot?.querySelector('[data-icon]')).toBeNull()
+  })
+
+  it('ignores failures from superseded loads', async () => {
+    const first = deferredIcon()
+    const second = deferredIcon()
+    const onError = vi.fn()
+    icon.addEventListener('error', onError)
+    icon.setAttribute('name', first.name)
+    const { connection } = await showIcon()
+    icon.setAttribute('name', second.name)
+    second.resolve('<svg data-icon="second"></svg>')
+    first.reject(new Error('superseded load'))
+    await connection
+
+    await vi.waitFor(() => {
+      expect(icon.shadowRoot?.querySelector('svg')?.dataset.icon).toBe('second')
+    })
+    expect(onError).not.toHaveBeenCalled()
+  })
+
+  it('warns without throwing when connected without a name', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined)
+    icon.removeAttribute('name')
+    const { connection } = await showIcon()
+    await expect(connection).resolves.toBeUndefined()
+    expect(() =>
+      icon.attributeChangedCallback('scale', null, '2'),
+    ).not.toThrow()
+    expect(warn).toHaveBeenCalledWith(
+      '<pixiv-icon> requires a "name" attribute.',
+    )
+    expect(() => icon.props).toThrow('property "name" is required.')
+    warn.mockRestore()
+  })
+
+  it('loads when a name is supplied after connecting without one', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined)
+    icon.removeAttribute('name')
+    const { connection } = await showIcon()
+    await connection
+    const pending = deferredIcon()
+    icon.setAttribute('name', pending.name)
+    pending.resolve('<svg data-icon="late"></svg>')
+    await vi.waitFor(() => {
+      expect(icon.shadowRoot?.querySelector('svg')?.dataset.icon).toBe('late')
+    })
+    warn.mockRestore()
   })
 })
 

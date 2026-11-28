@@ -42,6 +42,21 @@ TypeScript の型定義がグローバルにインストールされるので、
 | **fixed-size**                 | Number               | ガイドライン外のサイズで描画したいときに、px の数値で固定サイズを指定します。他のサイズ指定 (`scale` / `unsafe-non-guideline-scale`) よりも常に優先されます。SSR 時の CLS を防ぐため、vanilla HTML では `style="--charcoal-icon-size: Npx"` も併記してください (React の `<Icon fixedSize>` 経由なら自動)。 |
 | **unsafe-non-guideline-scale** | Number               | **(非推奨: `fixed-size` を使ってください)** ガイドラインに従わない倍率を無理やり指定する場合に使います。`fixed-size` 同様、CSS-only ではサイズを決定できないため、`style="--charcoal-icon-size: Npx"` の併記が必要です。                                                                                    |
 
+### 読み込みエラーを処理する
+
+アイコンを読み込めなかった場合は、`error` イベントが発火し、空の `<svg>` がプレースホルダとして残ります。
+`event.detail` には `PixivIconLoadError` が入ります。後続の `name` 変更や切断によって不要になった読み込みの失敗は通知しません。
+
+```ts
+const icon = document.querySelector('pixiv-icon')
+icon?.addEventListener('error', (event) => {
+  const { detail } = event as CustomEvent<PixivIconLoadError>
+  console.error(detail)
+})
+```
+
+`PixivIconLoadError` は `@charcoal-ui/icons` からインポートできます。
+
 ### 独自のアイコンを登録する
 
 `pixiv-icon` の name に存在しない SVG をアイコンとして登録することができます。
