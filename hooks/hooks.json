@@ -1,0 +1,27 @@
+{
+  "description": "Ask the user before building on existing code that imports a deprecated @charcoal-ui package",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Read|Bash|Grep",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/skills/avoiding-deprecated-charcoal-apis/bin/deprecated-hook.mjs\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "AskUserQuestion|Write|Edit|MultiEdit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/skills/avoiding-deprecated-charcoal-apis/bin/deprecated-hook.mjs\""
+          }
+        ]
+      }
+    ]
+  }
+}
