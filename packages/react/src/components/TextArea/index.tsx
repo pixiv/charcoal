@@ -3,7 +3,6 @@ import './index.css'
 import {
   forwardRef,
   useCallback,
-  useEffect,
   useImperativeHandle,
   useMemo,
   useRef,
@@ -16,6 +15,36 @@ import { AssistiveText } from '../TextField/AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
 import { useVisuallyHidden } from 'react-aria/VisuallyHidden'
 import { useId } from 'react-aria/useId'
+import { useIsomorphicLayoutEffect } from '../../_lib/useIsomorphicLayoutEffect'
+
+const measureTextAreaRows = (textarea: HTMLTextAreaElement) => {
+  const previousHeight = textarea.style.height
+  const previousOverflowY = textarea.style.overflowY
+
+  try {
+    // A fixed height prevents scrollHeight from shrinking with the content.
+    // Reset it synchronously so that soft-wrapped lines are measured as laid
+    // out by the browser, rather than inferred from the textarea value.
+    textarea.style.height = '0px'
+    // Avoid a non-overlay scrollbar reducing the available line width only
+    // while the temporary height is applied.
+    textarea.style.overflowY = 'hidden'
+
+    const style = getComputedStyle(textarea)
+    const lineHeight = Number.parseFloat(style.lineHeight)
+    const paddingBlock =
+      Number.parseFloat(style.paddingTop) +
+      Number.parseFloat(style.paddingBottom)
+    const contentHeight = textarea.scrollHeight - paddingBlock
+
+    // scrollHeight is rounded to whole pixels while line-height can be a
+    // fractional value (notably due to the iOS Safari scale workaround).
+    return Math.max(1, Math.round(contentHeight / lineHeight))
+  } finally {
+    textarea.style.height = previousHeight
+    textarea.style.overflowY = previousOverflowY
+  }
+}
 
 /**
  * `TextArea` を `imperativeRef` から操作するためのハンドル
@@ -86,12 +115,12 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     const [count, setCount] = useState(getCount(countValue))
 
     const textareaRef = useRef<HTMLTextAreaElement>(null)
-    const containerRef = useRef(null)
+    const containerRef = useRef<HTMLDivElement>(null)
     useFocusWithClick(containerRef, textareaRef)
     const { visuallyHiddenProps } = useVisuallyHidden()
 
     const isEnableAutoHeight = useMemo(
-      () => autoHeight || (maxRows && maxRows >= 0),
+      () => autoHeight || (maxRows !== undefined && maxRows >= 1),
       [autoHeight, maxRows],
     )
     const classNames = useClassNames('charcoal-text-area-root', className)
@@ -100,17 +129,18 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 
     const syncHeight = useCallback(
       (textarea: HTMLTextAreaElement) => {
-        const currentRows =
-          (`${textarea.value}\n`.match(/\n/gu)?.length ?? 0) || 1
+        const currentRows = measureTextAreaRows(textarea)
         const hasValidMaxRows = maxRows !== undefined && maxRows >= 1
         const nextRows = initialRows <= currentRows ? currentRows : initialRows
+        const nextHeightRows = hasValidMaxRows
+          ? Math.min(nextRows, maxRows)
+          : nextRows
 
-        if (!hasValidMaxRows) {
-          setRows(nextRows)
-          return
-        }
-
-        setRows(Math.min(nextRows, maxRows))
+        setRows((currentHeightRows) =>
+          currentHeightRows === nextHeightRows
+            ? currentHeightRows
+            : nextHeightRows,
+        )
       },
       [initialRows, maxRows],
     )
@@ -170,7 +200,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     const describedbyId = useId()
     const labelledbyId = useId()
 
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
       // 制御コンポーネントの時の挙動
       if (!isUncontrolled) {
         setCount(getCount(countValue))
@@ -188,6 +218,33 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       textareaRef,
       syncHeight,
     ])
+
+    useIsomorphicLayoutEffect(() => {
+      const container = containerRef.current
+      if (
+        !isEnableAutoHeight ||
+        container === null ||
+        typeof ResizeObserver === 'undefined'
+      ) {
+        return
+      }
+
+      let previousWidth = container.getBoundingClientRect().width
+      const observer = new ResizeObserver((entries) => {
+        const width = entries[0]?.contentRect.width
+        if (width === undefined || width === previousWidth) {
+          return
+        }
+
+        previousWidth = width
+        if (textareaRef.current !== null) {
+          syncHeight(textareaRef.current)
+        }
+      })
+
+      observer.observe(container)
+      return () => observer.disconnect()
+    }, [isEnableAutoHeight, syncHeight])
 
     return (
       <div className={classNames} aria-disabled={disabled}>
