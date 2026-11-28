@@ -1,4 +1,4 @@
-import { createRef, type ComponentProps } from 'react'
+import { createRef, useEffect, type ComponentProps } from 'react'
 import { render, fireEvent, act, cleanup, screen } from '@testing-library/react'
 import { vi, describe, it, expect, afterEach, beforeEach } from 'vitest'
 import Toast, { useToast, type ToastHandler } from '.'
@@ -98,6 +98,32 @@ describe('Toast', () => {
     expect(
       screen.getByText('保存しました').closest('.charcoal-toast'),
     ).toHaveAttribute('data-exiting', 'true')
+  })
+
+  it('keeps the show function referentially stable across re-renders', () => {
+    // Snackbar 側の同名テストと同じ保証。show を useEffect の依存に入れても
+    // 表示のたびに effect が再実行されないことを担保する
+    const identities = new Set<unknown>()
+
+    function ToastApp() {
+      const [toast, show] = useToast()
+      useEffect(() => {
+        identities.add(show)
+      }, [show])
+      return toast
+    }
+
+    render(<ToastApp />)
+    const [firstShow] = identities
+    act(() => {
+      ;(firstShow as ToastHandler['show'])('メッセージ', { type: 'success' })
+    })
+    act(() => {
+      vi.advanceTimersByTime(300)
+    })
+
+    expect(screen.getByText('メッセージ')).toBeInTheDocument()
+    expect(identities.size).toBe(1)
   })
 
   it('queues the next toast until the previous one closes', async () => {

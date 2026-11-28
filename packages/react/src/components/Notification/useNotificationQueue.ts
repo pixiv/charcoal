@@ -116,6 +116,11 @@ export function useNotificationQueue<
     maxVisibleToasts: 1,
     wrapUpdate,
   })
+  // state は表示のたびに参照が変わる。enqueue / close が state を直接 close over すると
+  // それらを包む利用側の show も表示のたびに作り直され、show を useEffect の依存に入れた
+  // 利用側で「表示 → 再レンダー → effect 再実行 → 再表示」の無限ループになるため、ref 経由で参照する
+  const stateRef = useRef(state)
+  stateRef.current = state
 
   useEffect(() => {
     return () => {
@@ -130,7 +135,11 @@ export function useNotificationQueue<
     }
   }, [])
 
-  function playNext() {
+  // enqueue から返る show を useEffect の依存に入れる利用側で「表示 → 再レンダー →
+  // show の参照が変わる → effect 再実行 → 再表示」の無限ループにならないよう、
+  // 以下の公開関数は useCallback で参照を固定する (render ごとに変わる state へは
+  // stateRef 経由でアクセスする)
+  const playNext = useCallback(() => {
     const next = queueRef.current.shift()
     if (next === undefined) {
       isShowingRef.current = false
@@ -143,47 +152,47 @@ export function useNotificationQueue<
       .matches
       ? 0
       : ANIMATION_DURATION_MS
-    const key = state.add(content, {
+    const key = stateRef.current.add(content, {
       // react-stately は 0 を「タイマーなし」と扱うため、最小の正数を渡す
       timeout: Math.max(1, duration + enterMs),
     })
     activeRef.current = { key, onClose, notified: false }
-  }
+  }, [])
   playNextRef.current = playNext
 
-  function enqueue(
-    content: TContent,
-    onClose?: (reason?: TCloseReason) => void,
-  ) {
-    const duration =
-      typeof durationOption === 'number' && Number.isFinite(durationOption)
-        ? Math.max(0, durationOption)
-        : DEFAULT_DURATION_MS
+  const enqueue = useCallback(
+    (content: TContent, onClose?: (reason?: TCloseReason) => void) => {
+      const duration =
+        typeof durationOption === 'number' && Number.isFinite(durationOption)
+          ? Math.max(0, durationOption)
+          : DEFAULT_DURATION_MS
 
-    queueRef.current.push({
-      content,
-      onClose,
-      duration,
-    })
-    if (!isShowingRef.current) {
-      playNext()
-    } else if (order === 'replace') {
-      const active = activeRef.current
-      if (active === undefined) return
+      queueRef.current.push({
+        content,
+        onClose,
+        duration,
+      })
+      if (!isShowingRef.current) {
+        playNext()
+      } else if (order === 'replace') {
+        const active = activeRef.current
+        if (active === undefined) return
 
-      replaceRef.current = !animateReplace
-      hoverRef.current.active = false
-      const pending = hoverRef.current.pending
-      hoverRef.current.pending = undefined
-      if (pending !== undefined) {
-        pending()
-      } else {
-        state.close(active.key)
+        replaceRef.current = !animateReplace
+        hoverRef.current.active = false
+        const pending = hoverRef.current.pending
+        hoverRef.current.pending = undefined
+        if (pending !== undefined) {
+          pending()
+        } else {
+          stateRef.current.close(active.key)
+        }
       }
-    }
-  }
+    },
+    [animateReplace, durationOption, order, playNext],
+  )
 
-  function close(key: string, reason: TCloseReason) {
+  const close = useCallback((key: string, reason: TCloseReason) => {
     const active = activeRef.current
     if (active?.key !== key) return
     active.reason = reason
@@ -193,25 +202,25 @@ export function useNotificationQueue<
     if (pending !== undefined) {
       pending()
     } else {
-      state.close(key)
+      stateRef.current.close(key)
     }
-  }
+  }, [])
 
-  function onHoverStart() {
+  const onHoverStart = useCallback(() => {
     hoverRef.current.active = true
-  }
+  }, [])
 
-  function onHoverEnd() {
+  const onHoverEnd = useCallback(() => {
     hoverRef.current.active = false
     const pending = hoverRef.current.pending
     hoverRef.current.pending = undefined
     pending?.()
-  }
+  }, [])
 
-  function clearHover() {
+  const clearHover = useCallback(() => {
     hoverRef.current.active = false
     hoverRef.current.pending = undefined
-  }
+  }, [])
 
   return {
     state,
