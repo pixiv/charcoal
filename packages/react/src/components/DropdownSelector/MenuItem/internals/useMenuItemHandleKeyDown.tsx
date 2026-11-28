@@ -3,16 +3,17 @@ import { handleFocusByKeyBoard } from './handleFocusByKeyBoard'
 import { MenuListContext } from '../../MenuList/MenuListContext'
 
 /**
- * MenuListContextに含まれるvalue間で上下キーでfocusを移動できる
+ * MenuListContextに登録された項目間で上下キーでfocusを移動できる
  * EnterキーでMenuListContextに値を設定する
  * 上記2つの処理を含む処理(handleKeyDown)と、Enterキーを押下した処理(setContextValue)を配列で返す
- * @param value
- * @returns
+ * @param value 選択したときに設定する値（空文字は未選択状態）
+ * @param disabled Enterキーでの選択を無効にするかどうか
  */
 export function useMenuItemHandleKeyDown(
   value?: string,
+  disabled?: boolean,
 ): [(e: React.KeyboardEvent<HTMLElement>) => void, () => void] {
-  const { setValue, root, propsArray } = useContext(MenuListContext)
+  const { setValue, root, getItems } = useContext(MenuListContext)
   const setContextValue = useCallback(() => {
     if (value !== undefined) setValue(value)
   }, [value, setValue])
@@ -20,37 +21,37 @@ export function useMenuItemHandleKeyDown(
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLElement>) => {
       if (e.key === 'Enter') {
-        setContextValue()
+        // 無効項目にプログラムからfocusされた場合も、Enterで選択させない。
+        if (!disabled) setContextValue()
       } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
         const isForward = e.key === 'ArrowDown'
         // prevent scroll
         e.preventDefault()
-        if (!propsArray || value === undefined) return
-        const values = propsArray
-          .map((props) => props.value)
-          .filter((v) => v) as string[]
-        let index = values.indexOf(value)
+        // 従来のvalue配列のfilterでは空文字やvalueなしの項目が除外されるため、
+        // 各MenuItemがrefで登録した要素を使う。getItemsはグループ内も含め
+        // DOM順に返すので、通常の項目の移動順を保ちつつvalueなしの項目も移動できる。
+        const options = getItems()
+        if (options.length === 0) return
+        // valueではなくイベント元の要素で位置を特定し、valueなしの項目も区別する。
+        let index = options.findIndex(
+          (item) => item.element === e.currentTarget,
+        )
         if (index === -1) return
 
-        for (let n = 0; n < values.length; n++) {
-          const focusValue = isForward
-            ? // prev or last
-              index + 1 >= values.length
-              ? values[0]
-              : values[index + 1]
-            : // next or first
-              index - 1 < 0
-              ? values[values.length - 1]
-              : values[index - 1]
-          const next = root?.current?.querySelector(
-            `[data-key='${focusValue}']`,
-          )
+        // 従来どおり末尾・先頭で折り返し、無効項目を飛ばす。
+        // 最大1周で探索を終え、全項目が無効でも無限ループしない。
+        for (let n = 0; n < options.length; n++) {
+          index = isForward
+            ? (index + 1) % options.length
+            : (index - 1 + options.length) % options.length
+          const { element: next, disabled: nextDisabled } = options[index]
 
           if (next instanceof HTMLElement) {
-            if (next.ariaDisabled === 'true') {
-              index += isForward ? 1 : -1
+            // DOMのaria-disabledを読み直す代わりに、refと一緒に登録されたpropsで判断する。
+            if (nextDisabled) {
               continue
             }
+            // 要素の取得方法だけを変え、focusとメニュー内のスクロール調整は従来どおり行う。
             next.focus({ preventScroll: true })
             if (root?.current?.parentElement) {
               handleFocusByKeyBoard(next, root.current.parentElement)
@@ -60,7 +61,7 @@ export function useMenuItemHandleKeyDown(
         }
       }
     },
-    [setContextValue, propsArray, value, root],
+    [disabled, setContextValue, getItems, root],
   )
   return [handleKeyDown, setContextValue]
 }
