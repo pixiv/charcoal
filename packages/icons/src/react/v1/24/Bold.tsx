@@ -12,9 +12,9 @@ const SvgBold = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
+      d="M13 3.75a4.75 4.75 0 013.639 7.8A4.75 4.75 0 0114 20.25H8c-.69 0-1.25-.56-1.25-1.25V5c0-.69.56-1.25 1.25-1.25h5zm-3.75 14H14a2.25 2.25 0 000-4.5H9.25v4.5zm0-7H13a2.25 2.25 0 000-4.5H9.25v4.5z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M13 3.75a4.75 4.75 0 013.639 7.8A4.75 4.75 0 0114 20.25H8c-.69 0-1.25-.56-1.25-1.25V5c0-.69.56-1.25 1.25-1.25h5zm-3.75 14H14a2.25 2.25 0 000-4.5H9.25v4.5zm0-7H13a2.25 2.25 0 000-4.5H9.25v4.5z"
       fill="currentColor"
     />
   </svg>

@@ -19,9 +19,9 @@ const SvgImgCover = (
       fill="currentColor"
     />
     <path
+      d="M5 2a3 3 0 00-3 3v14a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3H5zM4 5a1 1 0 011-1h10a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M5 2a3 3 0 00-3 3v14a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3H5zM4 5a1 1 0 011-1h10a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5z"
       fill="currentColor"
     />
     <path
